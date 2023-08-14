@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Module for test Review class"""
+import os
 import unittest
 import json
 import pep8
@@ -21,7 +22,8 @@ class TestReview(unittest.TestCase):
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/review.py'])
         self.assertEqual(result.total_errors, 0,
-                         "Found code style errors (and warnings).")
+                        "Found {result.total_errors} code style error(s) in {'models/review.py}.")
+
 
     def test_pep8_conformance_test_review(self):
         """Test that tests/test_models/test_review.py conforms to PEP8."""
